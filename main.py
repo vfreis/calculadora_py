@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 # from math import sqrt
 from calculadora import Calculadora
 
@@ -9,6 +9,15 @@ app = Flask(__name__)
 
 class Abort (Exception):
     pass
+
+@app.route('/')
+def init():
+    msginicial = 'Calculadora Inicializada'
+    return msginicial
+
+@app.route("/teste")
+def index():
+  return render_template('index.html')
 
 @app.route('/calculadora')
 def calculadoraWeb():
@@ -46,7 +55,13 @@ def calculadoraWeb():
     else:
         Abort(404)
 
-    return str(resultadoCalculado)
+    return jsonify(Valor1 = valor1, Valor2 = valor2, Operacao = operacao, Resultado = str(resultadoCalculado))
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5002))
+    app.run(host= '0.0.0.0', port = port)
+
+    
 
 
 
