@@ -2,7 +2,7 @@
 
 class Calculadora():
 
-    def soma(self, n1, n2):
+    def somar(self, n1, n2):
         return n1 + n2
 
     def subtrair(self, n1, n2):
@@ -14,8 +14,8 @@ class Calculadora():
     def dividir(self, n1, n2):
         return n1/n2
 
-calculadora = Calculadora()
-x = calculadora.soma(1, 2)
-print(x)
+# calculadora = Calculadora()
+# x = calculadora.dividir(1, 2)
+# print(x)
         
         
