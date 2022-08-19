@@ -12,12 +12,7 @@ class Abort (Exception):
 
 @app.route('/')
 def init():
-    msginicial = 'Calculadora Inicializada'
-    return msginicial
-
-@app.route("/teste")
-def index():
-  return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/calculadora')
 def calculadoraWeb():
