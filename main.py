@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, url_for
 # from math import sqrt
 from calculadora import Calculadora
 
@@ -14,11 +14,11 @@ class Abort (Exception):
 def init():
     return render_template('index.html')
 
-@app.route('/calculadora')
+@app.route('/calculadora', methods = ['POST', 'GET'])
 def calculadoraWeb():
-    valor1 = request.args.get('v1')
-    valor2 = request.args.get('v2')
-    operacao = request.args.get('operacao')
+    valor1 = request.form['input_v1']
+    valor2 = request.form['input_v1']
+    operacao = request.form['operacao']
 
     try:
         v1 = float(valor1)
