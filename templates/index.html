@@ -8,8 +8,9 @@
     <!-- <script type="text/javascript" src="{{url_for('static', filename='index.js')}}"></script> -->
   </head>
   <body>
+    <div>
     <form action="/calculadora" method="POST">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem;" >
         <div class="card-body">
           <h5 class="card-title">CalcPy</h5>
           <h6 class="card-subtitle mb-2 text-muted">Best Calculator in the Universe</h6>
@@ -25,10 +26,12 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">Operação</span>
             <!-- <input type="text" class="form-control" id="operacao" name="operacao" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"> -->
             <select class="form-select" aria-label="Default select example" id="operacao" name="operacao">
-              <option selected>Somar</option>
-              <option value="1">Dividir</option>
-              <option value="2">Subtrair</option>
-              <option value="3">Multiplicar</option>
+              <option value="Somar">Somar</option>
+              <option value="Dividir">Dividir</option>
+              <option value="Subtrair">Subtrair</option>
+              <option value="Multiplicar">Multiplicar</option>
+              <option value="Potencia">Potencia</option>
+              
             </select>
           </div>
           <button type="submit" class="btn btn-light" id="btn_calc">CalcuPy!</button>
@@ -37,6 +40,7 @@
         </div>
       </div>
     </form>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>

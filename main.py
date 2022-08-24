@@ -11,6 +11,7 @@ app.config['JSON_SORT_KEYS'] = False
 class Abort (Exception):
     pass
 
+
 @app.route('/')
 def init():
     return render_template('index.html')
@@ -18,7 +19,7 @@ def init():
 @app.route('/calculadora', methods = ['POST', 'GET'])
 def calculadoraWeb():
     valor1 = request.form['input_v1']
-    valor2 = request.form['input_v1']
+    valor2 = request.form['input_v2']
     operacao = request.form['operacao']
 
     try:
@@ -30,25 +31,29 @@ def calculadoraWeb():
         v2 = float(valor2)
     except ValueError:
         Abort(404)
-        
+
 
     calcular = Calculadora()
 
 
-    if(operacao == 'somar'):
+    if(operacao == 'Somar'):
         resultadoCalculado = calcular.somar(v1, v2)
 
-    elif(operacao == 'dividir'):
+    elif(operacao == 'Dividir'):
         if (v2 == 0):
             Abort(402)
         else:
             resultadoCalculado = calcular.dividir(v1, v2)
 
-    elif(operacao == 'subtrair'):
+    elif(operacao == 'Subtrair'):
         resultadoCalculado = calcular.subtrair(v1, v2)
 
-    elif(operacao == 'multiplicar'):
+    elif(operacao == 'Multiplicar'):
         resultadoCalculado = calcular.multiplicar(v1, v2)
+    
+    elif(operacao == 'Potencia'):
+        resultadoCalculado = calcular.potencia(v1, v2)
+
     else:
         Abort(404)
 
@@ -56,7 +61,7 @@ def calculadoraWeb():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5002))
-    app.run(host= '0.0.0.0', port = port)
+    app.run(host= 'localhost', port = port)
 
     
 
