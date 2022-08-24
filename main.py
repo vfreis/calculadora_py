@@ -30,6 +30,7 @@ def calculadoraWeb():
         v2 = float(valor2)
     except ValueError:
         Abort(404)
+        
 
     calcular = Calculadora()
 

@@ -23,7 +23,13 @@
           </div>
           <div class="input-group input-group-sm mb-4">
             <span class="input-group-text" id="inputGroup-sizing-sm">Operação</span>
-            <input type="text" class="form-control" id="operacao" name="operacao" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <!-- <input type="text" class="form-control" id="operacao" name="operacao" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"> -->
+            <select class="form-select" aria-label="Default select example" id="operacao" name="operacao">
+              <option selected>Somar</option>
+              <option value="1">Dividir</option>
+              <option value="2">Subtrair</option>
+              <option value="3">Multiplicar</option>
+            </select>
           </div>
           <button type="submit" class="btn btn-light" id="btn_calc">CalcuPy!</button>
           <!-- <a href="#" class="card-link">Card link</a>
