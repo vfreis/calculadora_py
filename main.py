@@ -3,10 +3,10 @@ from flask import Flask, request, jsonify, render_template, url_for
 # from math import sqrt
 from calculadora import Calculadora
 
-
 app = Flask(__name__)
-app.config['JSON_SORT_KEYS'] = False
 
+# para nao ordenar json
+app.config['JSON_SORT_KEYS'] = False
 
 class Abort (Exception):
     pass
@@ -22,7 +22,7 @@ def calculadoraWeb():
     valor2 = request.form['input_v2']
     operacao = request.form['operacao']
 
-    try:
+    try:    
         v1 = float(valor1)
     except ValueError:
         Abort(404)
